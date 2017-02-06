@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Main {
     public static ArrayList<Inventory> garage = new ArrayList<>();
     public static HashMap<String, String> passWords = new HashMap<>();
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         User user = new User();
         user.checkUser(scanner);

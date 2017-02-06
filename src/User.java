@@ -8,6 +8,7 @@ public class User {
     public User() {
         Main.passWords.put("admin", "password");
         Main.passWords.put("blake", "blake");
+        Main.passWords.put("john", "john");
 
     }
 
