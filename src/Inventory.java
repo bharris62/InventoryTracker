@@ -24,7 +24,7 @@ public class Inventory {
         return quantity;
     }
 
-    public void updateGarage(Scanner scanner){
+    public void update(Scanner scanner){
         System.out.println("What number would you like to update? ");
         int idx = Integer.parseInt(scanner.nextLine());
         System.out.println("What would you like to change to: ");
@@ -34,14 +34,17 @@ public class Inventory {
 
     }
 
-    public void printOutInventory() {
+    public void print() {
+        int i = 1;
+        System.out.println(" #    Q   Description");
         for (Inventory item : Main.garage) {
-            System.out.printf("%d: %s \n", item.quantity, item.item);
+            System.out.printf("[%d] [%d] %s \n",i, item.quantity, item.item);
+            i++;
         }
         System.out.println("----------------------");
     }
 
-    public void removeInventory(Scanner scanner) {
+    public void remove(Scanner scanner) {
         System.out.println("Enter item number to remove it. ([-1] to cancel)");
         int numToRemove = Integer.parseInt(scanner.nextLine());
         if (numToRemove > 0) {
@@ -55,5 +58,14 @@ public class Inventory {
         int quantity = getQuantity(scanner);
         Inventory thing = new Inventory(item, quantity);
         Main.garage.add(thing);
+    }
+
+    public void warning(Scanner scanner){
+        System.out.println("Are you sure, you will lose all data? [y/n]");
+        String userInput = scanner.nextLine();
+        if(userInput.equals("y")) {
+            System.exit(0);
+        }
+
     }
 }
