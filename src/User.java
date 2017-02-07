@@ -24,6 +24,7 @@ public class User {
             System.out.print("Enter your password: ");
             String pass = scanner.nextLine();
             if (isValidUser(userName, pass)) {
+                System.out.println("Wecome, " + userName);
                 break;
             }
             System.out.println("Nope - Try again");
